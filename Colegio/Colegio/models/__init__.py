@@ -1,0 +1,1 @@
+from . import profesor, alumno, aula, conserje, padre_madre

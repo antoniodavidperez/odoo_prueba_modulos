@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="colegio_alumno_action" name="alumno" res_model="colegio.alumno" />
+
+        <record id="colegio_alumno_view_tree" model="ir.ui.view">
+            <field name="name">Lista de alumnos</field>
+            <field name="model">colegio.alumno</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numeroMatricula" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="colegio_alumno_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de alumnos</field>
+            <field name="model">colegio.alumno</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="numeroMatricula" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Alumnos" id="menu_alumnos" parent="menu_colegio" sequence="10"/>
+        <menuitem name="Alumno" id="menu_alumno" action="colegio_alumno_action" parent="menu_alumnos" sequence="10"/>
+    </data>
+</odoo>

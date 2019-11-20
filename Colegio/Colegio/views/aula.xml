@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="colegio_aula_action" name="aula" res_model="colegio.aula" />
+
+        <record id="colegio_aula_view_tree" model="ir.ui.view">
+            <field name="name">Lista de aulas</field>
+            <field name="model">colegio.aula</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="planta" />
+                    <field name="piso" />
+                    <field name="letra" />
+                    <field name="asignatura" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="colegio_aula_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de aulas</field>
+            <field name="model">colegio.aula</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="planta" />
+                    <field name="piso" />
+                    <field name="letra" />
+                    <field name="asignatura" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Aulas" id="menu_aulas" parent="menu_colegio" sequence="10"/>
+        <menuitem name="Aula" id="menu_aula" action="colegio_aula_action" parent="menu_aulas" sequence="10"/>
+    </data>
+</odoo>

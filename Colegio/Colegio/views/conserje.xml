@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="colegio_conserje_action" name="conserje" res_model="colegio.conserje" />
+
+        <record id="colegio_conserje_view_tree" model="ir.ui.view">
+            <field name="name">Lista de conserjes</field>
+            <field name="model">colegio.conserje</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="antiguedad" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="colegio_conserje_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de conserjes</field>
+            <field name="model">colegio.conserje</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="antiguedad" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Conserjes" id="menu_conserjes" parent="menu_colegio" sequence="10"/>
+        <menuitem name="Conserje" id="menu_conserje" action="colegio_conserje_action" parent="menu_conserjes" sequence="10"/>
+    </data>
+</odoo>

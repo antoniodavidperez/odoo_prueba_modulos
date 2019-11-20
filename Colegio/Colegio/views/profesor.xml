@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="colegio_profesor_action" name="profesor" res_model="colegio.profesor" />
+
+        <record id="colegio_profesor_view_tree" model="ir.ui.view">
+            <field name="name">Lista de profesores</field>
+            <field name="model">colegio.profesor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                    <field name="asignatura" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="colegio_profesor_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de profesores</field>
+            <field name="model">colegio.profesor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                    <field name="asignatura" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Colegio" id="menu_colegio" sequence="10" />
+        <menuitem name="Profesores" id="menu_profesores" parent="menu_colegio" sequence="10"/>
+        <menuitem name="Profesor" id="menu_profesor" action="colegio_profesor_action" parent="menu_profesores" sequence="10"/>
+    </data>
+</odoo>
